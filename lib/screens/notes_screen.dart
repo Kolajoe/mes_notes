@@ -41,10 +41,6 @@ class _NotesScreenState extends State<NotesScreen> {
     super.dispose();
   }
 
-  // ===========================================================================
-  // CHARGEMENT DES NOTES
-  // ===========================================================================
-
   Future<void> _loadNotes({bool showLoader = true}) async {
     if (showLoader && mounted) {
       setState(() {
@@ -71,10 +67,6 @@ class _NotesScreenState extends State<NotesScreen> {
       _showMessage('Impossible de charger les notes.', isError: true);
     }
   }
-
-  // ===========================================================================
-  // RECHERCHE
-  // ===========================================================================
 
   Future<void> _searchNotes(String query) async {
     setState(() {
@@ -111,10 +103,6 @@ class _NotesScreenState extends State<NotesScreen> {
     _searchNotes('');
   }
 
-  // ===========================================================================
-  // NAVIGATION
-  // ===========================================================================
-
   Future<void> _openAddNote() async {
     await Navigator.push(
       context,
@@ -143,10 +131,6 @@ class _NotesScreenState extends State<NotesScreen> {
 
     await _loadNotes(showLoader: false);
   }
-
-  // ===========================================================================
-  // UTILITAIRES
-  // ===========================================================================
 
   void _showMessage(String message, {bool isError = false}) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -195,10 +179,6 @@ class _NotesScreenState extends State<NotesScreen> {
     return '$day/$month/${parsedDate.year}';
   }
 
-  // ===========================================================================
-  // INTERFACE PRINCIPALE
-  // ===========================================================================
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -245,10 +225,6 @@ class _NotesScreenState extends State<NotesScreen> {
       ),
     );
   }
-
-  // ===========================================================================
-  // EN-TÊTE
-  // ===========================================================================
 
   Widget _buildWelcomeHeader() {
     return Padding(
@@ -334,10 +310,6 @@ class _NotesScreenState extends State<NotesScreen> {
     );
   }
 
-  // ===========================================================================
-  // RECHERCHE
-  // ===========================================================================
-
   Widget _buildSearchBar() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(20, 5, 20, 15),
@@ -360,10 +332,6 @@ class _NotesScreenState extends State<NotesScreen> {
     );
   }
 
-  // ===========================================================================
-  // CONTENU
-  // ===========================================================================
-
   Widget _buildNotesContent() {
     if (_isLoading) {
       return const Center(child: CircularProgressIndicator());
@@ -384,10 +352,6 @@ class _NotesScreenState extends State<NotesScreen> {
       },
     );
   }
-
-  // ===========================================================================
-  // ÉTAT VIDE
-  // ===========================================================================
 
   Widget _buildEmptyState() {
     final isSearching = _searchQuery.isNotEmpty;
@@ -459,10 +423,6 @@ class _NotesScreenState extends State<NotesScreen> {
     );
   }
 
-  // ===========================================================================
-  // CARTE D'UNE NOTE
-  // ===========================================================================
-
   Widget _buildNoteCard(Note note) {
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
@@ -520,9 +480,6 @@ class _NotesScreenState extends State<NotesScreen> {
 
               const SizedBox(height: 9),
 
-              // ---------------------------------------------------------------
-              // CONTENU
-              // ---------------------------------------------------------------
               Text(
                 note.content,
                 maxLines: 3,
@@ -536,9 +493,6 @@ class _NotesScreenState extends State<NotesScreen> {
 
               const SizedBox(height: 13),
 
-              // ---------------------------------------------------------------
-              // INFORMATIONS
-              // ---------------------------------------------------------------
               Row(
                 children: [
                   const Icon(
@@ -572,10 +526,6 @@ class _NotesScreenState extends State<NotesScreen> {
       ),
     );
   }
-
-  // ===========================================================================
-  // INITIALES
-  // ===========================================================================
 
   String _getInitials(String name) {
     final parts = name

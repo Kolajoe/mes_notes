@@ -594,10 +594,6 @@ class _MenuScreenState extends State<MenuScreen> {
   }
 }
 
-// ============================================================
-// Écran commun pour les catégories Favoris / Archives
-// ============================================================
-
 class NotesCategoryScreen extends StatefulWidget {
   final String title;
   final List<Note> notes;

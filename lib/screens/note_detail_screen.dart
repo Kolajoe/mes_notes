@@ -30,10 +30,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
     _note = widget.note;
   }
 
-  // ---------------------------------------------------------------------------
-  // DATE
-  // ---------------------------------------------------------------------------
-
   String _formatDate(String date) {
     final parsedDate = DateTime.tryParse(date);
 
@@ -53,10 +49,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
 
     return '$day/$month/$year à $hour:$minute';
   }
-
-  // ---------------------------------------------------------------------------
-  // FAVORI
-  // ---------------------------------------------------------------------------
 
   Future<void> _toggleFavorite() async {
     if (_isProcessing) return;
@@ -107,10 +99,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
       }
     }
   }
-
-  // ---------------------------------------------------------------------------
-  // ARCHIVE
-  // ---------------------------------------------------------------------------
 
   Future<void> _toggleArchive() async {
     if (_isProcessing) return;
@@ -172,10 +160,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
     }
   }
 
-  // ---------------------------------------------------------------------------
-  // MODIFICATION
-  // ---------------------------------------------------------------------------
-
   Future<void> _editNote() async {
     if (_isProcessing) return;
 
@@ -202,10 +186,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
       ),
     );
   }
-
-  // ---------------------------------------------------------------------------
-  // SUPPRESSION
-  // ---------------------------------------------------------------------------
 
   Future<void> _deleteNote() async {
     if (_isProcessing) return;
@@ -256,10 +236,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
     }
   }
 
-  // ---------------------------------------------------------------------------
-  // INTERFACE
-  // ---------------------------------------------------------------------------
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -309,10 +285,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // ---------------------------------------------------------------
-              // TITRE
-              // ---------------------------------------------------------------
-
               Text(
                 _note.title,
                 style: const TextStyle(
@@ -325,9 +297,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
 
               const SizedBox(height: 12),
 
-              // ---------------------------------------------------------------
-              // INFORMATIONS
-              // ---------------------------------------------------------------
               Row(
                 children: [
                   const Icon(
@@ -353,9 +322,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
 
               const SizedBox(height: 15),
 
-              // ---------------------------------------------------------------
-              // BADGES
-              // ---------------------------------------------------------------
               Wrap(
                 spacing: 8,
                 runSpacing: 8,
@@ -378,9 +344,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
 
               const SizedBox(height: 25),
 
-              // ---------------------------------------------------------------
-              // CONTENU
-              // ---------------------------------------------------------------
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.all(20),
@@ -401,9 +364,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
 
               const SizedBox(height: 30),
 
-              // ---------------------------------------------------------------
-              // ACTIONS
-              // ---------------------------------------------------------------
               Row(
                 children: [
                   Expanded(
@@ -439,10 +399,6 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
       ),
     );
   }
-
-  // ---------------------------------------------------------------------------
-  // BADGE
-  // ---------------------------------------------------------------------------
 
   Widget _buildBadge({
     required IconData icon,
