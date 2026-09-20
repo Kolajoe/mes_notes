@@ -349,7 +349,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           textCapitalization: TextCapitalization.words,
           textInputAction: TextInputAction.next,
           decoration: const InputDecoration(
-            hintText: 'Ex. Jean Dupont',
+            hintText: 'Ex. Jonathan Kola',
             prefixIcon: Icon(Icons.person_outline),
           ),
           validator: (value) {
@@ -415,7 +415,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           textInputAction: TextInputAction.next,
           autocorrect: false,
           decoration: const InputDecoration(
-            hintText: 'Ex. jean.dupont',
+            hintText: 'Ex. jonathan.kola',
             prefixIcon: Icon(Icons.account_circle_outlined),
           ),
           validator: (value) {
